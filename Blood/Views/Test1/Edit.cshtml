@@ -1,0 +1,51 @@
+﻿@model Blood.Models.Test1
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Test1</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="id" />
+            <div class="form-group">
+                <label asp-for="name" class="control-label"></label>
+                <input asp-for="name" class="form-control" />
+                <span asp-validation-for="name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="division" class="control-label"></label>
+                <input asp-for="division" class="form-control" />
+                <span asp-validation-for="division" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="section" class="control-label"></label>
+                <input asp-for="section" class="form-control" />
+                <span asp-validation-for="section" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="position" class="control-label"></label>
+                <input asp-for="position" class="form-control" />
+                <span asp-validation-for="position" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreationTime" class="control-label"></label>
+                <input asp-for="CreationTime" class="form-control" />
+                <span asp-validation-for="CreationTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

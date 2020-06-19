@@ -1,0 +1,114 @@
+﻿@model Blood.Models.Inventory
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Inventory</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.created_by)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.created_by)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.serial_no)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.serial_no)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.qty)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.qty)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.mbd)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.mbd)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.blood_type)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.blood_type)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.date_coltd)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.date_coltd)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.date_released)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.date_released)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.stakeholder)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.stakeholder)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.date_transfuse)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.date_transfuse)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.key_test)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.key_test)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.age)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.age)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.expiry_date)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.expiry_date)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.status)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.status)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.amount)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.amount)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CreationTime)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CreationTime)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ModifiedDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ModifiedDate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

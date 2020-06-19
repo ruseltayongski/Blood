@@ -2,48 +2,138 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Blood</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
-</head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Blood</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <partial name="_LoginPartial" />
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+    <title>@ViewData["Title"]</title>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2020 - Blood - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <!-- Select2 -->
+    <link rel="stylesheet" href="~/adminLTE/plugins/select2/css/select2.min.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="~/adminLTE/plugins/fontawesome-free/css/all.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="~/adminLTE/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/adminLTE/dist/css/adminlte.min.css">
+    <!-- Google Font -->
+    <link rel="stylesheet" href="~/adminLTE/google.css">
+    <!-- icheck bootstrap -->
+    <link rel="stylesheet" href="~/adminLTE/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- Date Range Picker-->
+    <link rel="stylesheet" href="~/adminLTE/plugins/daterangepicker_old/daterangepicker-bs3.css">
+</head>
+@{ 
+    ViewData["controller_name"] = this.ViewContext.RouteData.Values["controller"].ToString();
+    ViewData["action_name"] = this.ViewContext.RouteData.Values["action"].ToString();
+}
+<body class="hold-transition sidebar-mini layout-fixed layout-footer-fixed">
+    <div class="wrapper">
+        <partial name="~/Views/Shared/navbar.cshtml" />
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0 text-dark">@ViewData["Title"]</h1>
+                        </div><!-- /.col -->
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#">@ViewData["controller_name"]</a></li>
+                                <li class="breadcrumb-item active">@ViewData["Title"]</li>
+                            </ol>
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+            <!-- /.content-header -->
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+
+                                <div class="card-body">
+                                    @RenderBody() <!-- /.card-content and body -->
+                                    <partial name="~/Views/Shared/modal.cshtml" /><!-- modal -->
+                                </div>
+                                <!-- ./card-body -->
+
+
+                            </div>
+                            <!-- /.card -->
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+
+                </div><!--/. container-fluid -->
+            </section>
+            <!-- /.content -->
+        </div><!-- /.content-wrapper -->
+        <!-- Main Footer -->
+        <footer class="main-footer">
+            <strong>Copyright &copy; @DateTime.Now.Year <a href="http://www.ro7.doh.gov.ph/" target="_blank">Department of Health - Central Visayas Center for Health Development Region 7</a>.</strong>
+            All rights reserved.
+            <div class="float-right d-none d-sm-inline-block">
+                <b>Version</b> 2.0.0
+            </div>
+        </footer>
+    </div><!-- ./wrapper -->
+    <!-- REQUIRED SCRIPTS -->
+    <!-- jQuery -->
+    <script src="~/adminLTE/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="~/adminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- overlayScrollbars -->
+    <script src="~/adminLTE/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/adminLTE/dist/js/adminlte.js"></script>
+
+    <!-- CANVASS CHART -->
+    <script src="~/js/canvasjs.min.js"></script>
+
+    <!-- Date Range Picker -->
+    <script src="~/adminLTE/plugins/daterangepicker_old/moment.min.js"></script>
+    <script src="~/adminLTE/plugins/daterangepicker_old/daterangepicker.js"></script>
+
+    <!-- Select2 -->
+    <script src="~/adminLTE/plugins/select2/js/select2.full.min.js"></script>
+    
+    <!-- LOADING GIF -->
+    <script>var loading = '<center><img src="img/loading.gif" style="padding:20px;"></center>';</script>
+    <script>
+        @{
+            int year = DateTime.Now.Year;
+            DateTime firstDay = new DateTime(year, 1, 1);
+            DateTime lastDay = new DateTime(year, 12, 31);
+            string partial_script = "~/Views/"+ViewData["controller_name"]+"/script.cshtml";
+        }
+
+        $('.select2').select2();
+
+        $('#filter').daterangepicker({
+            "singleDatePicker": false,
+            "startDate": "@firstDay",
+            "endDate": "@lastDay"
+        })
+
+        function loadingDisplay() {
+            $('#modal-loading').modal({
+                backdrop: 'static',
+                keyboard: false,
+                show: true
+            });
+        }
+
+        $('#form_submit').submit(function(e){
+            loadingDisplay();
+        });
+    </script>
+    <partial name=@partial_script />
+
     @RenderSection("Scripts", required: false)
 </body>
 </html>

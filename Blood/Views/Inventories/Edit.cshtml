@@ -1,0 +1,101 @@
+﻿@model Blood.Models.Inventory
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Inventory</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="id" />
+            <div class="form-group">
+                <label asp-for="created_by" class="control-label"></label>
+                <input asp-for="created_by" class="form-control" />
+                <span asp-validation-for="created_by" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="serial_no" class="control-label"></label>
+                <input asp-for="serial_no" class="form-control" />
+                <span asp-validation-for="serial_no" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="qty" class="control-label"></label>
+                <input asp-for="qty" class="form-control" />
+                <span asp-validation-for="qty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="mbd" class="control-label"></label>
+                <input asp-for="mbd" class="form-control" />
+                <span asp-validation-for="mbd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="blood_type" class="control-label"></label>
+                <input asp-for="blood_type" class="form-control" />
+                <span asp-validation-for="blood_type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="date_coltd" class="control-label"></label>
+                <input asp-for="date_coltd" class="form-control" />
+                <span asp-validation-for="date_coltd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="date_released" class="control-label"></label>
+                <input asp-for="date_released" class="form-control" />
+                <span asp-validation-for="date_released" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="stakeholder" class="control-label"></label>
+                <input asp-for="stakeholder" class="form-control" />
+                <span asp-validation-for="stakeholder" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="date_transfuse" class="control-label"></label>
+                <input asp-for="date_transfuse" class="form-control" />
+                <span asp-validation-for="date_transfuse" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="key_test" class="control-label"></label>
+                <input asp-for="key_test" class="form-control" />
+                <span asp-validation-for="key_test" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="age" class="control-label"></label>
+                <input asp-for="age" class="form-control" />
+                <span asp-validation-for="age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="expiry_date" class="control-label"></label>
+                <input asp-for="expiry_date" class="form-control" />
+                <span asp-validation-for="expiry_date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="status" class="control-label"></label>
+                <input asp-for="status" class="form-control" />
+                <span asp-validation-for="status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="amount" class="control-label"></label>
+                <input asp-for="amount" class="form-control" />
+                <span asp-validation-for="amount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreationTime" class="control-label"></label>
+                <input type="hidden" asp-for="CreationTime" class="form-control" />
+                <span asp-validation-for="CreationTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

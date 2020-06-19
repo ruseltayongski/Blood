@@ -25,6 +25,10 @@ namespace Blood.Controllers
             return View(await _context.test_table.ToListAsync());
         }
 
+        public IActionResult TestView() {
+            return View();
+        }
+
         // GET: Tests/Details/5
         public async Task<IActionResult> Details(int? id)
         {

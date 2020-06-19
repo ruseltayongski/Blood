@@ -1,0 +1,152 @@
+﻿@using Newtonsoft.Json.Linq;
+@using Newtonsoft.Json;
+@using PagedList.Mvc; 
+@using PagedList; 
+@using System.Web.Mvc.Html;
+@model IEnumerable<Blood.Models.Test>
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.encoded_by)
+                Created By
+            </th>
+            <th>
+                Serial No
+            </th>
+            <th>
+                QTY
+            </th>
+            <th>
+                MBD
+            </th>
+            <th>
+                Blood Type
+            </th>
+            <th>
+                Date Coltd
+            </th>
+            <th>
+                Date Released
+            </th>
+            <th>
+                Stakeholder
+            </th>
+            <th>
+                Date Transfuse
+            </th>
+            <th>
+                Key Test
+            </th>
+            <th>
+                Age
+            </th>
+            <th>
+                Expiry date
+            </th>
+            <th>
+                Status
+            </th>
+            <th>
+                Amount
+            </th>
+            <th>
+                Creation Time
+            </th>
+            <th>
+                Modified Date
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            dynamic json = JsonConvert.DeserializeObject(ViewBag.inventory);
+        }
+        @foreach (var item in json)
+        {
+        <tr>
+            <td>
+                @item.serial_no
+            </td>
+            <td>
+                @item.qty
+            </td>
+            <td>
+                @item.mbd
+            </td>
+            <td>
+                @item.blood_type
+            </td>
+            <td>
+                @{
+                    string date_coltd = item.date_coltd != null ? System.Convert.ToDateTime(item.date_coltd).ToString("MMMM dd, yyyy") : "";
+                }
+                @date_coltd
+            </td>
+            <td>
+                @{
+                    string date_released = item.date_released != null ? System.Convert.ToDateTime(item.date_released).ToString("MMMM dd, yyyy") : "";
+                }
+                @date_released
+            </td>
+            <td>
+                @item.stakeholder
+            </td>
+            <td>
+                @{
+                    string date_transfuse = item.date_transfuse != null ? System.Convert.ToDateTime(item.date_transfuse).ToString("MMMM dd, yyyy") : "";
+                }
+                @date_transfuse
+            </td>
+            <td>
+                @item.key_test
+            </td>
+            <td>
+                @item.age
+            </td>
+            <td>
+                @{
+                    string expiry_date = item.expiry_date != null ? System.Convert.ToDateTime(item.expiry_date).ToString("MMMM dd, yyyy") : "";
+                }
+                @expiry_date
+            </td>
+            <td>
+                @item.status
+            </td>
+            <td>
+                @item.amount
+            </td>
+            <td>
+                @{
+                    string CreationTime = item.CreationTime != null ? System.Convert.ToDateTime(item.CreationTime).ToString("MMMM dd, yyyy h:mm tt") : "";
+                }
+                @CreationTime
+            </td>
+            <td>
+                @{
+                    string ModifiedDate = item.ModifiedDate != null ? System.Convert.ToDateTime(item.ModifiedDate).ToString("MMMM dd, yyyy h:mm tt") : "";
+                }
+                @ModifiedDate
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+            </td>
+
+        </tr>
+        }
+    </tbody>
+</table>
+@*@Html.PagedListPager((IPagedList)ViewBag.invenitory, page => Url.Action("Index", new { page }))*@
+
